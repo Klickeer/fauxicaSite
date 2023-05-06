@@ -47,6 +47,16 @@ nav ul li a.active:before{
     bottom: -6px;
 }
 
+nav ul li a:before{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 1px;
+    border-bottom: 2px solid rgb(102, 102, 102);
+    bottom: -6px;
+    transition: width .3s;
+}
+
 main{
     display: flex;
     gap: 8em;
@@ -97,15 +107,16 @@ h1{
     color: black;
     text-decoration: none;
     font-weight: 100;
-}
-
-.left-main-icons{
+    transition: width .3s;
     display: block;
     padding: 1em 0;
 }
 
+
+
 .left-main-icons svg{
     width: 20px;
+    transition: transform .3s;
 }
 
 .left-foter-cube{
@@ -154,6 +165,7 @@ h1{
     display: flex;
     align-items: end;
     background-size: 150%;
+    transition: background-size 800ms;
 }
 
 .card1{
@@ -189,6 +201,7 @@ h1{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: transform 1.2s;
 }
 
 .card-details a{
@@ -205,4 +218,58 @@ h1{
 
 p.producr-price{
     font-size: 1.8rem;
+}
+
+nav ul li a:hover:before{
+    width: 35%;
+}
+
+.left-main-button:hover{
+    background-color: #dac4ab;
+}
+
+.left-main-icons:hover svg{
+    transform: translateX(10px);
+}
+
+.left-main-icons:hover{
+    text-decoration: underline;
+}
+
+.card:hover{
+    background-size: 160%;
+}
+
+.card:hover .card-details{
+    transform: translateY(-5px);
+}
+
+.imposition{
+    position: absolute;
+    z-index: 999;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    animation: reveal 1s ease-in forwards;
+    transform-origin: bottom;
+}
+
+@keyframes reveal{
+    from{
+        transform: scaleY(1);
+    }
+    to{
+        transform: scaleY(0);
+    }
+}
+
+main{
+    animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    transform: scale(.4);
+}
+
+@keyframes growIn{
+    to{
+        transform: scale(1);
+    }
 }
