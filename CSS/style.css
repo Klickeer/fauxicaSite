@@ -282,6 +282,12 @@ main{
         box-sizing: border-box;
         text-align: center;
     }
+    .logoF{
+        margin-top: 20px;
+    }
+    .wrapper{
+        padding: 0 8px;
+    }
     main{
         flex-direction: row;
         flex-wrap: wrap;
@@ -307,8 +313,8 @@ main{
         content: "";
         background: url(../images/tag.svg) no-repeat;
         width: 100%;
-        height: 99%;
-        top: -10px;
+        height: 50%;
+        top: 46.5px;
         left: 158px;
         pointer-events: none;
     }
@@ -318,15 +324,26 @@ main{
         align-items:end;
     }
     .left-foter-cube{
-    display: flex;
-    gap: 10em;
-    padding: 1em;
-    height: 160px;
-    width: 393px;
+        display: flex;
+        align-content: center;
+        gap: 10em;
+        padding: 1em;
+        height: 130px;
+    }
+    .left-foter-cube::before{
+        position: absolute;
+        content: '';
+        background: url(../images/confetti.svg);
+        height: 100px; 
+        width: 100px; 
+        top: 2px; 
+        left: 10px; 
+        z-index: 2;
     }
     .left-details{
-        font-size: 15px;
-        margin: 0;
+        font-size: 13.5px;
+        text-align: left;
+        align-self: center;
     }
     .left-cube{
         width: 100%;
